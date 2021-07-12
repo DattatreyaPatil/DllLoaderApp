@@ -1,0 +1,24 @@
+<div>
+
+
+<p>Welcome to Dynamic Dll execution Page</p>
+<!-- <p>{{dlls | json}}</p> -->
+
+
+  <form>
+    <h4>Available Dlls</h4>
+    <mat-form-field appearance="fill">
+      
+      <select matNativeControl [ngModel]="selectedDll" (ngModelChange)="onChange($event)" name="dll" >
+        <option *ngFor="let dll of dlls" [ngValue]="dll">
+          {{dll.dllName}}
+        </option>
+      </select>
+
+    </mat-form-field>
+    <p> Selected DLL: {{selectedDll.dllName}} </p>
+  </form>
+
+
+  <button value="executeDll" id="executeDll" (click)="executeDll()">Execute DLL</button>
+</div>
